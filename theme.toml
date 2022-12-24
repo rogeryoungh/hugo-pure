@@ -1,0 +1,11 @@
+name = "Hugo Pure"
+license = "Apache-2.0"
+licenselink = "https://github.com/rogeryoungh/hugo-pure/blob/main/LICENSE"
+description = ""
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+name = "rogeryoungh"
+homepage = "https://rogery.dev/"
