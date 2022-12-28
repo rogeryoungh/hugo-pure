@@ -1,0 +1,14 @@
+<div class="valine-frame"></div>
+<script
+  crossorigin="anonymous"
+  src="https://lib.baomitu.com/valine/1.5.1/Valine.min.js"></script>
+<script>
+new Valine({
+  el: '.valine-frame',
+  appId: '{{ .Site.Params.valine.appId }}',
+  appKey: '{{ .Site.Params.valine.appKey }}',
+  avatar: '{{ .Site.Params.valine.avatar }}',
+  placeholder: '{{ .Site.Params.valine.placeholder }}',
+  visitor: '{{ .Site.Params.valine.visitor }}'
+});
+</script>

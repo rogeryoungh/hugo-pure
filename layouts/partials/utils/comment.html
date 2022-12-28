@@ -1,0 +1,3 @@
+{{ if .Params.valine.enable | default .Site.Params.valine.enable }}
+  {{ partial "third-party/valine.html" . }}
+{{ end }}

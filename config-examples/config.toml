@@ -47,5 +47,15 @@ prism = true
 TOC = true
 
 
+# valine 评论
+[params.valine]
+enable = false
+appId = ""
+appKey = ""
+avatar = "mp"
+placeholder = "说点什么吧..."
+visitor = false
+
+
 [outputs]
 home = ["HTML", "RSS", "JSON"]

@@ -1,6 +1,6 @@
 <main class="px-5 flex justify-center">
-  <article class="article w-full max-w-210">
-    <header class="my-30">
+  <article class="article w-full max-w-210 my-10">
+    <header class="my-20">
       <h1 class="text-8 text-center folt-bold"> {{ .Params.title }} </h1>
       <a
         class="text-center-my-6 hidden print:block"
@@ -13,8 +13,12 @@
       <h1> 目录 </h1>
       {{- .TableOfContents -}}
     {{ end }}
-    <section>
+    <section class="content-frame my-10">
       {{ partial "utils/content.html" . }}
+    </section>
+    <hr />
+    <section class="comment-frame my-10">
+      {{ partial "utils/comment.html" . }}
     </section>
   </article>
 </main>
