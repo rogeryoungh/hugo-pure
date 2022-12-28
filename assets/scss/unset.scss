@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+	line-height: 1.5;
+	margin: 0;
+	overflow: overlay;
+	padding: 0
+}
+
+a, h1, h2, h3, h4, h5, h6, p {
+	font-size: inherit;
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: inherit;
+}
+
+button {
+  background: 0 0;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+}

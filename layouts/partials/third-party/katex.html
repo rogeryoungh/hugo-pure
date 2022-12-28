@@ -1,0 +1,27 @@
+<link
+  crossorigin="anonymous"
+  integrity="sha512-mQwom8Ns4op+H29oDkD/LXO/OsXPvCFfkgZkFAVrhhePzRLU8NUI3Nkm43NhWUSmj3p5Cca2HTEkMQmXQRwDQQ=="
+  href="https://lib.baomitu.com/KaTeX/0.16.4/katex.min.css" rel="stylesheet">
+<script
+  crossorigin="anonymous"
+  integrity="sha512-sHSNLECRJSK+BFs7E8DiFc6pf6n90bLI85Emiw1jhreduZhK3VXgq9l4kAt9eTIHYAcuQBKHL01QKs4/3Xgl8g=="
+  src="https://lib.baomitu.com/KaTeX/0.16.4/katex.min.js"></script>
+<script
+  crossorigin="anonymous"
+  integrity="sha512-iWiuBS5nt6r60fCz26Nd0Zqe0nbk1ZTIQbl3Kv7kYsX+yKMUFHzjaH2+AnM6vp2Xs+gNmaBAVWJjSmuPw76Efg=="
+  src="https://lib.baomitu.com/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: '$$', right: '$$', display: true },
+      { left: '$', right: '$', display: false },
+      { left: '\\(', right: '\\)', display: false },
+      { left: '\\[', right: '\\]', display: true },
+    ],
+    globalGroup: true,
+    throwOnError: false
+  });
+});
+</script>

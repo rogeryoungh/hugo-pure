@@ -1,0 +1,20 @@
+<main class="px-5 flex justify-center">
+  <article class="article w-full max-w-210">
+    <header class="my-30">
+      <h1 class="text-8 text-center folt-bold"> {{ .Params.title }} </h1>
+      <a
+        class="text-center-my-6 hidden print:block"
+        href="{{ .Site.Params.header.link | default .Site.BaseURL }}">
+        {{ .Site.Params.header.name }}
+      </a>
+      <div class="text-center"> {{ .PublishDate.Format "2006 年 1 月 2 日" }} </div>
+    </header>
+    {{ if .Params.TOC | default .Site.Params.TOC }}
+      <h1> 目录 </h1>
+      {{- .TableOfContents -}}
+    {{ end }}
+    <section>
+      {{ partial "utils/content.html" . }}
+    </section>
+  </article>
+</main>

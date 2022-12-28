@@ -1,0 +1,352 @@
+.relative {
+  position: relative
+}
+
+.static {
+  position: static
+}
+
+.tabsize-2 {
+  tab-size: 2;
+}
+
+.color-primary {
+  color: var(--primary-color);
+}
+
+.color-secondary {
+  color: var(--secondary-color);
+}
+
+@function rem4x($v) {
+  @return #{$v / 4}rem;
+}
+
+$all: 0 1 2 3 4 5 6 7 8 9 10 11 12 20 30 240;
+
+@each $m in $all {
+  .py-#{$m} {
+    padding-top: rem4x($m);
+    padding-bottom: rem4x($m);
+  }
+  .px-#{$m} {
+    padding-left: rem4x($m);
+    padding-right: rem4x($m);
+  }
+  .p-#{$m} {
+    padding: rem4x($m);
+  }
+  .m-#{$m} {
+    margin: rem4x($m);
+  }
+  .w-#{$m} {
+    width: rem4x($m);
+  }
+  .h-#{$m} {
+    height: rem4x($m);
+  }
+  .my-#{$m} {
+    margin-top: rem4x($m);
+    margin-bottom: rem4x($m);
+  }
+  .mx-#{$m} {
+    margin-left: rem4x($m);
+    margin-right: rem4x($m);
+  }
+  .pt-#{$m} {
+    padding-top: rem4x($m);
+  }
+  .mt-#{$m} {
+    margin-top: rem4x($m);
+  }
+  .pl-#{$m} {
+    padding-left: rem4x($m);
+  }
+  .max-w-#{$m} {
+    max-width: rem4x($m);
+  }
+  .text-#{$m} {
+    font-size: rem4x($m);
+  }
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.mx {
+  margin-left: 1rem;
+  margin-right: 1rem
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem
+}
+
+.mb-20 {
+  margin-bottom: 5rem
+}
+
+.ml {
+  margin-left: 1rem
+}
+
+.mr {
+  margin-right: 1rem
+}
+
+.mt-5 {
+  margin-top: 1.25rem
+}
+
+.inline {
+  display: inline
+}
+
+.inline-block {
+  display: inline-block
+}
+
+.hidden {
+  display: none
+}
+
+.h1 {
+  height: .25rem
+}
+
+.h2 {
+  height: .5rem
+}
+
+.max-w-210 {
+  max-width: 52.5rem
+}
+
+.max-w-240 {
+  max-width: 60rem
+}
+
+.min-h-70vh {
+  min-height: 70vh
+}
+
+.w-12 {
+  width: 3rem
+}
+
+.w-full {
+  width: 100%
+}
+
+.w0 {
+  width: 0rem
+}
+
+.wa {
+  width: auto
+}
+
+.flex {
+  display: flex
+}
+
+.basis-full {
+  flex-basis: 100%
+}
+
+.flex-wrap {
+  flex-wrap: wrap
+}
+
+.items-stretch {
+  align-items: stretch
+}
+
+.self-center {
+  align-self: center
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.items-center {
+  align-items: center
+}
+
+.items-end {
+  align-items: end
+}
+
+.justify-between {
+  justify-content: space-between
+}
+
+.whitespace-nowrap {
+  white-space: nowrap
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.block {
+  display: block;
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.border-collapse {
+  border-collapse: collapse;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.b-l-2 {
+  border-left-width: 2px;
+  border-left-style: solid
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.break-anywhere {
+  overflow-wrap: anywhere;
+}
+
+.b-area {
+  border-color: var(--area-color)
+}
+
+.rd {
+  border-radius: .25rem
+}
+
+.py {
+  padding-top: 1rem;
+  padding-bottom: 1rem
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem
+}
+
+.pl-0 {
+  padding-left: 0rem
+}
+
+.pl-4 {
+  padding-left: 1rem
+}
+
+.pl-5 {
+  padding-left: 1.25rem
+}
+
+.pt-1 {
+  padding-top: 0.25rem
+}
+
+.text-center {
+  text-align: center
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.font-normal {
+  font-weight: 400
+}
+
+.font-inherit {
+  font: inherit;
+}
+
+.shadow {
+  --un-shadow: var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgba(0, 0, 0, 0.1)), var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgba(0, 0, 0, 0.1));
+  box-shadow: var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);
+}
+
+.font-serif {
+  font-family: var(--default-serif-font)
+}
+
+.font-mono {
+  font-family: var(--default-mono-font)
+}
+
+.hover-bg {
+  transition:background-color 0.3s linear;
+  &:hover {
+    background-color: var(--hover-background);
+  }
+}
+
+.underline {
+  box-shadow: 0 1px;
+}
+
+@media print {
+  .print\:block {
+    display: block
+  }
+
+  .print\:hidden {
+    display: none
+  }
+}
+
+
+
+@media (min-width: $small) {
+  .sm\:mt-0 {
+    margin-top: 0rem
+  }
+
+  .sm\:basis-auto {
+    flex-basis: auto
+  }
+
+  .sm\:basis-full {
+    flex-basis: 100%
+  }
+
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between
+  }
+
+  .sm\:mt-0 {
+    margin-top: 0;
+  }
+}
+

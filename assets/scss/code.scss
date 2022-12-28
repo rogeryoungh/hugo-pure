@@ -1,0 +1,73 @@
+pre[class*="language-"] {
+  @extend .block;
+  @extend .p-4;
+  @extend .my-6;
+  @extend .overflow-x-auto;
+	border: 2px solid var(--primary-color);
+
+  code {
+    @extend .w-full;
+    @extend .tabsize-2;
+    font-size: 0.85rem;
+
+    .foreground {
+      color: var(--prism-foreground);
+    }
+
+    .background {
+      color: var(--prism-background);
+    }
+
+    .comment {
+      color: var(--prism-comment);
+    }
+
+    .string {
+      color: var(--prism-string);
+    }
+
+    .literal {
+      color: var(--prism-literal);
+    }
+
+    .keyword {
+      color: var(--prism-keyword);
+    }
+
+    .function {
+      color: var(--prism-function);
+    }
+
+    .deleted {
+      color: var(--prism-deleted);
+    }
+
+    .class {
+      color: var(--prism-class);
+    }
+
+    .builtin {
+      color: var(--prism-builtin);
+    }
+
+    .property {
+      color: var(--prism-property);
+    }
+
+    .namespace {
+      color: var(--prism-namespace);
+    }
+
+    .punctuation {
+      color: var(--prism-punctuation);
+    }
+
+    .decorator {
+      color: var(--prism-decorator);
+    }
+
+    .json-property {
+      color: var(--prism-json-property);
+    }
+  }
+}

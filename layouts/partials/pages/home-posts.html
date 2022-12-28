@@ -1,0 +1,21 @@
+<main class="px-5 flex justify-center">
+  <article class="w-full max-w-210">
+    <header class="my-30">
+      <h1 class="text-8 text-center font-bold"> 目录 </h1>
+    </header>
+    {{ range site.RegularPages.GroupByPublishDate "2006" }}
+    <h2 class="text-7 font-bold pt-4"> {{- .Key }}
+      <sup class="text-4 color-secondary"> {{ len .Pages }}</sup>
+    </h2>
+    <ul class="py-4">
+      {{- range .Pages }}
+      <li class="flex justify-between px-8 py-3 hover-bg">
+        <a href="{{.RelPermalink}}"> {{.Title}}</a>
+        <div class="color-secondary"> {{.Date.Format "01-02"}} </div>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+  </article>
+</div>

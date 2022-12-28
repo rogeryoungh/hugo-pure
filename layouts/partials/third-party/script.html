@@ -1,0 +1,9 @@
+{{ if .Params.plugin.katex | default .Site.Params.plugin.katex }}
+  {{ partial "third-party/katex.html" . }}
+{{ end }}
+
+{{ if .Params.plugin.prism | default .Site.Params.plugin.prism }}
+  {{ partial "third-party/prism.html" . }}
+{{ end }}
+
+{{ partial "third-party/theme-switch.html" . }}

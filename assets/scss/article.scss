@@ -1,0 +1,395 @@
+.article {
+  counter-reset: theorem definition sidenote-counter;
+
+  p {
+    @extend .text-justify;
+    @extend .my-6;
+    @extend .text-4;
+  }
+
+  /* Make links red */
+  a,
+  a:visited {
+    @extend .decoration-none;
+    @extend .break-anywhere;
+    text-decoration-skip-ink: auto;
+    color: var(--link-visited);
+  }
+
+  a:hover {
+    @extend .underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @extend .font-bold;
+  }
+
+  /* Heading typography */
+  h1 {
+    @extend .text-8;
+    @extend .my-8;
+  }
+
+  h2 {
+    @extend .text-7;
+    @extend .my-8;
+  }
+
+  h3 {
+    @extend .text-6;
+    @extend .my-6;
+  }
+
+  h4 {
+    @extend .text-5;
+    @extend .my-6;
+  }
+
+  h5 {
+    @extend .text-4;
+    @extend .my-6;
+  }
+
+  .katex-display {
+    overflow: auto hidden;
+  }
+
+  /* Make images easier to work with */
+  img {
+    @extend .max-w-full;
+    @extend .h-auto;
+    @extend .block;
+  }
+
+  ul {
+    @extend .pl-8;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    @extend .font-inherit;
+  }
+
+  /* Prevent textarea from overflowing */
+  textarea {
+    @extend .w-full;
+  }
+
+  // /* Natural flow and rhythm in articles by default */
+  // article>*+* {
+  // 	margin-top: 1em;
+  // }
+
+  /* Styles for inline code or code snippets */
+  code,
+  pre,
+  kbd {
+    @extend .font-mono;
+  }
+
+  /* Better tables */
+  table {
+    @extend .w-full;
+    @extend .border-collapse;
+    @extend .overflow-x-auto;
+    // @extend .border-y-2.27;
+    border-color: var(--table-border-color);
+    counter-increment: caption;
+  }
+
+  /* add bottom border on column table headings  */
+  table tr>th[scope='col'] {
+    // @extend .border-b-1.36;
+    border-color: var(--table-border-color);
+  }
+
+  /* add right border on row table headings  */
+  table tr>th[scope='row'] {
+    // @extend .border-r-1.36;
+    border-color: var(--table-border-color);
+  }
+
+  table>tbody>tr:first-child>td,
+  table>tbody>tr:first-child>th {
+    // @extend .border-t-1.36;
+    border-color: var(--table-border-color);
+  }
+
+  table>tbody>tr:last-child>td,
+  table>tbody>tr:last-child>th {
+    // @extend .border-b-1.36;
+    border-color: var(--table-border-color);
+  }
+
+  th,
+  td {
+    padding: .5rem;
+    line-height: 1.1;
+  }
+
+  /* Table caption */
+  caption {
+    text-align: left;
+    font-size: 0.923em;
+    /* border-bottom: 2pt solid #000; */
+    padding: 0 0.25em 0.25em;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  caption::before {
+    content: 'Table ' counter(caption) '. ';
+    font-weight: bold;
+  }
+
+  /* allow scroll on the x-axis */
+  .scroll-wrapper {
+    overflow-x: auto;
+  }
+
+  /* if a table is wrapped in a scroll wrapper,
+	the table cells shouldn't wrap */
+  .scroll-wrapper>table td {
+    white-space: nowrap;
+  }
+
+  /* Nested ordered list for ToC */
+  nav ol {
+    counter-reset: item;
+    padding-left: 2rem;
+  }
+
+  nav li {
+    display: block;
+  }
+
+  nav li:before {
+    content: counters(item, '.') ' ';
+    counter-increment: item;
+    padding-right: 0.85rem;
+    font-weight: inherit;
+    color: var(--link-visited);
+  }
+
+  /* Center definitions (most useful for display equations) */
+  dl dd {
+    text-align: center;
+  }
+
+  /* Theorem */
+  div.theorem {
+    counter-increment: theorem;
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+  }
+
+  div.theorem::before {
+    content: 'Theorem ' counter(theorem) '. ';
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* Lemma */
+  div.lemma {
+    counter-increment: theorem;
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+  }
+
+  div.lemma::before {
+    content: 'Lemma ' counter(theorem) '. ';
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* Proof */
+  div.proof {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+    position: relative;
+  }
+
+  div.proof::before {
+    content: 'Proof. ' attr(title);
+    font-style: italic;
+  }
+
+  div.proof:after {
+    content: '◾️';
+    filter: var(--proof-symbol-filter);
+    position: absolute;
+    right: -12px;
+    bottom: -2px;
+  }
+
+  /* Definition */
+  div.definition {
+    counter-increment: definition;
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+  }
+
+  div.definition::before {
+    content: 'Definition ' counter(definition) '. ';
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* Center align author name, use small caps and add vertical spacing  */
+  .author {
+    margin: 0.85rem 0;
+    font-variant-caps: small-caps;
+    text-align: center;
+  }
+
+  /* Sidenotes */
+
+  .sidenote {
+    font-size: 0.8rem;
+    float: right;
+    clear: right;
+    width: 18vw;
+    margin-right: -20vw;
+    margin-bottom: 1em;
+  }
+
+  .sidenote.left {
+    float: left;
+    margin-left: -20vw;
+    margin-bottom: 1em;
+  }
+
+  /* (WIP) add border when a sidenote is clicked on */
+  .sidenote:target {
+    border: var(--sidenote-target-border-color) 1.5px solid;
+    padding: 0 .5rem;
+    scroll-margin-block-start: 10rem;
+  }
+
+  /* sidenote counter */
+  .sidenote-number {
+    counter-increment: sidenote-counter;
+  }
+
+  .sidenote-number::after,
+  .sidenote::before {
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  /* add number in main content */
+  .sidenote-number::after {
+    content: counter(sidenote-counter);
+    font-size: 0.7rem;
+    top: -0.5rem;
+    left: 0.1rem;
+  }
+
+  /* add number in front of the sidenote */
+  .sidenote-number~.sidenote::before {
+    content: counter(sidenote-counter) ' ';
+    font-size: 0.7rem;
+    top: -0.5rem;
+  }
+
+  label.sidenote-toggle:not(.sidenote-number) {
+    display: none;
+  }
+
+  /* sidenotes inside blockquotes are indented more */
+  blockquote .sidenote {
+    margin-right: -24vw;
+    width: 18vw;
+  }
+
+
+  label.sidenote-toggle {
+    display: inline;
+    cursor: pointer;
+  }
+
+  input.sidenote-toggle {
+    display: none;
+  }
+
+  @media (max-width: 1050px) {
+    label.sidenote-toggle:not(.sidenote-number) {
+      display: inline;
+    }
+
+    .sidenote {
+      display: none;
+    }
+
+    .sidenote-toggle:checked+.sidenote {
+      display: block;
+      margin: 0.5rem 1.25rem 1rem 0.5rem;
+      float: left;
+      left: 1rem;
+      clear: both;
+      width: 95%;
+    }
+
+    /* tweak indentation of sidenote inside a blockquote */
+    blockquote .sidenote {
+      margin-right: -25vw;
+      width: 16vw;
+    }
+  }
+
+  /* Make footnote text smaller and left align it (looks bad with long URLs) */
+  .footnotes p {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 85%;
+    margin-bottom: 0.4rem;
+  }
+
+  .footnotes {
+    border-top: 1px solid var(--footnotes-border-color);
+  }
+
+  /* Center title and paragraph */
+  .abstract,
+  .abstract p {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .abstract {
+    margin: 2.25rem 0;
+  }
+
+  .abstract>h2 {
+    font-size: 1rem;
+    margin-bottom: -0.2rem;
+  }
+
+  /* Format the LaTeX symbol correctly (a higher up, e lower) */
+  .latex span:nth-child(1) {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    vertical-align: 0.28em;
+    margin-left: -0.48em;
+    margin-right: -0.15em;
+    line-height: 1ex;
+  }
+
+  .latex span:nth-child(2) {
+    text-transform: uppercase;
+    vertical-align: -0.5ex;
+    margin-left: -0.1667em;
+    margin-right: -0.125em;
+    line-height: 1ex;
+  }
+}

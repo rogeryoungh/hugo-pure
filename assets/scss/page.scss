@@ -1,0 +1,14 @@
+@use "small.scss";
+
+:root {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font-family: var(--default-serif-font);
+}
+
+
+.a-underline {
+  a {
+    @extend .underline;
+  }
+}

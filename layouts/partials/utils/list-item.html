@@ -1,0 +1,8 @@
+<ul class="list-part">
+  {{ range . }}
+  <li class="list-item">
+    <a href="{{ .RelPermalink }}" class="list-item-title">{{ .LinkTitle }}</a>
+    <time datetime="{{ .PublishDate.Format "2006 年 1 月 2 日" }}" class="list-item-time"> YYYY 年 m 月 d 日</time>
+  </li>
+  {{ end }}
+</ul>

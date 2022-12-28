@@ -1,0 +1,4 @@
+{{- $Content := partial "utils/markdownify.html" (dict "$" . "raw" .Content "isContent" true) -}}
+
+<!-- Final Content -->
+{{- $Content | safeHTML -}}

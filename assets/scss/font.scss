@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+
+// @font-face {
+//   font-family: 'Noto Serif SC Web Font';
+//   font-style: normal;
+//   font-weight: 400;
+//   src:
+//     local('Noto Serif CJK SC'),
+//     local('Source Han Serif SC'),
+//     local('Source Han Serif CN'),
+//     local('思源宋体'),
+//     local('思源宋体 CN'),
+//     local('Noto Serif SC'),
+//     url('lib.baomitu.com/fonts/noto-serif-sc/noto-serif-sc-regular.woff'),
+// }
+
+:root {
+	--default-serif-font: 'Noto Serif SC', SimSum, serif, var(--default-emoji-font);
+	--default-sans-font: 'Noto Sans SC', 'Microsoft YaHei', sans-serif, var(--default-emoji-font);
+	--default-mono-font: 'JetBrains Mono', Consolas, 'Monospace Unicode Fallback', monospace, var(--default-emoji-font);
+	--default-kai-font: 'LXGW WenKai', 'LXGW WenKai Lite', '霞鹜文楷', 'LXGW WenKai Web Font', STKaiTi, KaiTi, var(--default-serif-font);
+	--default-emoji-font: 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	--default-latin-font: 'Noto Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+}

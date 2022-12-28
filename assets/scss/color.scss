@@ -1,0 +1,99 @@
+@mixin lightVariables {
+  --primary-color: #000;
+  --secondary-color: #555;
+  --third-color: #999;
+
+	--bg-color: hsl(210, 20%, 98%);
+	--scrollbar-color: #8F8F8F;
+	--body-color: hsl(0, 5%, 10%);
+	--body-bg-color: hsl(210, 20%, 98%);
+	--link-visited: hsl(0, 100%, 33%);
+	--link-focus-outline: hsl(220, 90%, 52%);
+	--pre-bg-color: hsl(210, 28%, 93%);
+	--kbd-bg-color: hsl(210, 5%, 100%);
+	--kbd-border-color: hsl(210, 5%, 70%);
+	--table-border-color: black;
+	--sidenote-target-border-color: hsl(55, 55%, 70%);
+	--footnotes-border-color: hsl(0, 0%, 39%);
+  --un-ring-offset-shadow: 0 0 rgba(0, 0, 0, 0);
+  --un-ring-shadow: 0 0 rgba(0, 0, 0, 0);
+  --un-shadow-inset: ;
+  --un-shadow: 0 0 rgba(0, 0, 0, 0);
+
+  --hover-background: #eeeeee;
+
+  --prism-foreground: #393a34;
+  --prism-background: #fbfbfb;
+  --prism-comment: #b8c4b8;
+  --prism-string: #c67b5d;
+  --prism-literal: #3a9c9b;
+  --prism-keyword: #248459;
+  --prism-function: #849145;
+  --prism-deleted: #a14f55;
+  --prism-class: #2b91af;
+  --prism-builtin: #a52727;
+  --prism-property: #ad502b;
+  --prism-namespace: #c96880;
+  --prism-punctuation: #8e8f8b;
+  --prism-decorator: #bd8f8f;
+  --prism-json-property: #698c96;
+}
+
+@mixin darkVariables {
+  --primary-color: #fff;
+  --secondary-color: #bbb;
+  --third-color: #999;
+
+	--bg-color: hsl(0, 0%, 16%);
+	--body-color: hsl(0, 0%, 86%);
+	--body-bg-color: hsl(0, 0%, 16%);
+	--link-visited: hsl(196 80% 77%);
+	--link-focus-outline: hsl(215, 63%, 73%);
+	--pre-bg-color: hsl(0, 1%, 25%);
+	--kbd-bg-color: hsl(0, 0%, 16%);
+	--kbd-border-color: hsl(210, 5%, 70%);
+	--table-border-color: white;
+	--sidenote-target-border-color: hsl(0, 0%, 59%);
+	--footnotes-border-color: hsl(0, 0%, 59%);
+	--proof-symbol-filter: invert(80%);
+  --un-ring-offset-shadow: 0 0 rgba(0, 0, 0, 0);
+  --un-ring-shadow: 0 0 rgba(0, 0, 0, 0);
+  --un-shadow-inset: ;
+  --un-shadow: 0 0 rgba(0, 0, 0, 0);
+
+  --hover-background: #222222;
+
+  --prism-foreground: #d4d4d4;
+  --prism-background: #1e1e1e;
+  --prism-namespace: #aaaaaa;
+  --prism-comment: #758575;
+  --prism-namespace: #444444;
+  --prism-string: #ce9178;
+  --prism-punctuation: #d4d4d4;
+  --prism-literal: #36acaa;
+  --prism-keyword: #38a776;
+  --prism-function: #dcdcaa;
+  --prism-deleted: #9a050f;
+  --prism-class: #4ec9b0;
+  --prism-builtin: #d16969;
+  --prism-property: #ce9178;
+  --prism-regex: #ad502b;
+}
+
+:root:not(.dark):not(.light) {
+	@media (prefers-color-scheme: light) {
+		@include lightVariables;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		@include darkVariables;
+	}
+}
+
+:root.dark {
+	@include darkVariables;
+}
+
+:root.light {
+	@include lightVariables;
+}

@@ -1,0 +1,21 @@
+@media (min-width: 40em) {
+  %mt-0 {
+    margin-top: 0rem
+  }
+
+  %basis-auto {
+    flex-basis: auto
+  }
+
+  %basis-full {
+    flex-basis: 100%
+  }
+
+  %flex-nowrap {
+    flex-wrap: nowrap
+  }
+
+  %justify-between {
+    justify-content: space-between
+  }
+}

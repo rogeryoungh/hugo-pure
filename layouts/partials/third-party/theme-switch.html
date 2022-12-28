@@ -1,0 +1,46 @@
+<script>
+let themeSwitch = document.getElementById("theme-switcher");
+var icon = themeSwitch.children[0];
+let currentPref = localStorage.getItem('pref-theme') || 'auto';
+let html = document.documentElement;
+let windowPref = window.matchMedia('(prefers-color-scheme: dark)');
+let reloadTheme = () => {
+  icon.classList.remove('i-carbon-moon');
+  icon.classList.remove('i-carbon-sun');
+  icon.classList.remove('i-carbon-automatic');
+  let isDark = false;
+  if (currentPref === 'light') {
+    isDark = false;
+    icon.classList.add('i-carbon-sun');
+  } else if (currentPref === 'dark') {
+    isDark = true;
+    icon.classList.add('i-carbon-moon');
+  } else {
+    isDark = windowPref.matches;
+    icon.classList.add('i-carbon-automatic');
+  }
+  if (isDark) {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+};
+themeSwitch.addEventListener("click", () => {
+  icon.classList.remove('i-carbon-moon');
+  icon.classList.remove('i-carbon-sun');
+  icon.classList.remove('i-carbon-automatic');
+  if (currentPref === 'auto') {
+    currentPref = 'dark';
+    icon.classList.add('i-carbon-moon');
+  } else if (currentPref === 'dark') {
+    currentPref = 'light';
+    icon.classList.add('i-carbon-sun');
+  } else {
+    currentPref = 'auto';
+    icon.classList.add('i-carbon-automatic');
+  }
+  localStorage.setItem("pref-theme", currentPref);
+  reloadTheme();
+});
+reloadTheme();
+</script>

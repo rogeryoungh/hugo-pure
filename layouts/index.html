@@ -1,1 +1,11 @@
-<h1>HELLO</h1>
+{{ define "main" }}
+
+<main class="px-5 flex justify-center">
+  <article class="article w-full max-w-210">
+    <section class="mt-20">
+      {{ partial "utils/content.html" . }}
+    </section>
+  </article>
+</main>
+
+{{ end }}
