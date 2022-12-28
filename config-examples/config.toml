@@ -34,12 +34,14 @@ name = "rogeryoungh"
 link = "https://rogery.dev/"
 
 
-# 其他插件
-[params.plugin]
 # KaTeX 公式渲染
-katex = true
+[params.katex]
+enable = false
+
+
 # Prism 代码高亮
-prism = true
+[params.prism]
+enable = false
 
 
 # valine 评论

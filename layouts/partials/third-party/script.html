@@ -1,8 +1,8 @@
-{{ if .Params.plugin.katex | default .Site.Params.plugin.katex }}
+{{ if .Params.katex.enable | default .Site.Params.katex.enable }}
   {{ partial "third-party/katex.html" . }}
 {{ end }}
 
-{{ if .Params.plugin.prism | default .Site.Params.plugin.prism }}
+{{ if .Params.prism.enable | default .Site.Params.prism.enable }}
   {{ partial "third-party/prism.html" . }}
 {{ end }}
 
