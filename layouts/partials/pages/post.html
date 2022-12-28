@@ -9,7 +9,7 @@
       </a>
       <div class="text-center"> {{ .PublishDate.Format "2006 年 1 月 2 日" }} </div>
     </header>
-    {{ if .Params.TOC | default .Site.Params.TOC }}
+    {{ if .Params.toc.enable | default .Site.Params.toc.enable }}
       <h1> 目录 </h1>
       {{- .TableOfContents -}}
     {{ end }}

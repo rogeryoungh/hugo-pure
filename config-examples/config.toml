@@ -69,9 +69,9 @@ inputPosition = ""
 lang = ""
 
 
-[params]
 # 目录
-TOC = true
+[params.toc]
+enable = true
 
 
 [outputs]
