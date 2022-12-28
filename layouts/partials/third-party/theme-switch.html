@@ -31,9 +31,9 @@ let reloadTheme = () => {
   } else {
     html.classList.remove('dark');
   }
-  if (localStorage.hasOwnProperty('giscus-session')) {
+  {{ if .Params.giscus.enable | default .Site.Params.giscus.enable }}
     changeGiscusTheme(isCurrentDark() ? 'dark' : 'light');
-  }
+  {{ end }}
 };
 themeSwitch.addEventListener("click", () => {
   icon.classList.remove('i-carbon-moon');
