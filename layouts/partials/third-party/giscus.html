@@ -1,0 +1,42 @@
+<div class="giscus"></div>
+<script>
+let giscusTheme = localStorage.getItem("giscus-theme");
+let giscusAttributes = () => {
+  return {
+    "src": "https://giscus.app/client.js",
+    "data-repo": "{{ .Site.Params.giscus.repo }}",
+    "data-repo-id": "{{ .Site.Params.giscus.repoId }}",
+    "data-category": "{{ .Site.Params.giscus.category }}",
+    "data-category-id": "{{ .Site.Params.giscus.categoryId }}",
+    "data-mapping": "{{ .Site.Params.giscus.mapping }}",
+    "data-strict": "{{ .Site.Params.giscus.strict }}",
+    "data-reactions-enabled": "{{ .Site.Params.giscus.reactionsEnabled }}",
+    "data-emit-metadata": "{{ .Site.Params.giscus.emitMetadata }}",
+    "data-input-position": "{{ .Site.Params.giscus.inputPosition }}",
+    "data-theme": isCurrentDark() ? 'dark' : 'light',
+    "data-lang": "{{ .Site.Params.giscus.lang }}",
+    "crossorigin": "anonymous",
+    "async": "",
+  }
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  let giscusScript = document.createElement("script");
+  Object.entries(giscusAttributes()).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+  document.body.appendChild(giscusScript);
+});
+
+// https://github.com/giscus/giscus/issues/336
+function changeGiscusTheme(theme) {
+  const sendMessage = (message) => {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  sendMessage({
+    setConfig: {
+      theme: theme
+    }
+  });
+}
+</script>

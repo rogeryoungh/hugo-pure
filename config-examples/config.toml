@@ -42,11 +42,6 @@ katex = true
 prism = true
 
 
-[params]
-# 目录
-TOC = true
-
-
 # valine 评论
 [params.valine]
 enable = false
@@ -55,6 +50,26 @@ appKey = ""
 avatar = "mp"
 placeholder = "说点什么吧..."
 visitor = false
+
+
+# giscus 评论
+[params.giscus]
+enable = false
+repo = ""
+repoId = ""
+category = ""
+categoryId = ""
+mapping = ""
+strict = ""
+reactionsEnabled = ""
+emitMetadata = ""
+inputPosition = ""
+lang = ""
+
+
+[params]
+# 目录
+TOC = true
 
 
 [outputs]

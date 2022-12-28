@@ -1,3 +1,7 @@
 {{ if .Params.valine.enable | default .Site.Params.valine.enable }}
   {{ partial "third-party/valine.html" . }}
 {{ end }}
+
+{{ if .Params.giscus.enable | default .Site.Params.giscus.enable }}
+  {{ partial "third-party/giscus.html" . }}
+{{ end }}

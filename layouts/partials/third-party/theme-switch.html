@@ -4,25 +4,35 @@ var icon = themeSwitch.children[0];
 let currentPref = localStorage.getItem('pref-theme') || 'auto';
 let html = document.documentElement;
 let windowPref = window.matchMedia('(prefers-color-scheme: dark)');
+function isCurrentDark() {
+  let isDark = false;
+  if (currentPref === 'light') {
+    isDark = false;
+  } else if (currentPref === 'dark') {
+    isDark = true;
+  } else {
+    isDark = windowPref.matches;
+  }
+  return isDark;
+}
 let reloadTheme = () => {
   icon.classList.remove('i-carbon-moon');
   icon.classList.remove('i-carbon-sun');
   icon.classList.remove('i-carbon-automatic');
-  let isDark = false;
   if (currentPref === 'light') {
-    isDark = false;
     icon.classList.add('i-carbon-sun');
   } else if (currentPref === 'dark') {
-    isDark = true;
     icon.classList.add('i-carbon-moon');
   } else {
-    isDark = windowPref.matches;
     icon.classList.add('i-carbon-automatic');
   }
-  if (isDark) {
+  if (isCurrentDark()) {
     html.classList.add('dark');
   } else {
     html.classList.remove('dark');
+  }
+  if (localStorage.hasOwnProperty('giscus-session')) {
+    changeGiscusTheme(isCurrentDark() ? 'dark' : 'light');
   }
 };
 themeSwitch.addEventListener("click", () => {
