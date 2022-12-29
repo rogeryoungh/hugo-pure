@@ -64,7 +64,7 @@
     @extend .block;
   }
 
-  ul {
+  ol, ul {
     @extend .pl-8;
   }
 
@@ -162,7 +162,6 @@
   /* Nested ordered list for ToC */
   nav ol {
     counter-reset: item;
-    padding-left: 2rem;
   }
 
   nav li {
