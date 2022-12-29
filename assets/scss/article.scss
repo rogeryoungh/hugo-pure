@@ -148,6 +148,14 @@
     font-weight: bold;
   }
 
+  blockquote {
+    @extend .my-6;
+    @extend .py-1;
+    @extend .px-5;
+    background-color: var(--hover-background);
+    border-inline-start: 5px solid var(--primary-color);
+  }
+
   /* allow scroll on the x-axis */
   .scroll-wrapper {
     overflow-x: auto;
