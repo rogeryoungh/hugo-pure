@@ -11,6 +11,21 @@ theme = "hugo-pure"
 Copyright = "© 2021 [Roger Young](https://acm.rogery.dev)"
 
 
+
+# 导航栏目录
+[[params.menu]]
+name = "Post"
+url = "/post"
+
+[[params.menu]]
+name = "Tags"
+url = "/tags"
+
+[[params.menu]]
+name = "About"
+url = "/about"
+
+
 [markup.tableOfContents]
 # <ol> 目录
 ordered = true

@@ -8,9 +8,9 @@
       <button class="m-3 self-center" id="theme-switcher">
         <i class="i-carbon-automatic text-4">Sun</i>
       </button>
-      <li class="flex"><a class="m-3" href="/post">Posts</a></li>
-      <li class="flex"><a class="m-3" href="/tag">Tag</a></li>
-      <li class="flex"><a class="m-3" href="/about">About</a></li>
+      {{ range $elem_val := .Site.Params.menu }}
+        <li class="flex"><a class="m-3" href="{{ $elem_val.url }}">{{ $elem_val.name }}</a></li>
+      {{ end }}
     </ul>
   </nav>
 </header>
