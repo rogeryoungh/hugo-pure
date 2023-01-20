@@ -7,7 +7,14 @@
         href="{{ .Site.Params.header.link | default .Site.BaseURL }}">
         {{ .Site.Params.header.name }}
       </a>
-      <div class="text-center"> {{ .PublishDate.Format "2006 年 1 月 2 日" }} </div>
+      <div class="text-center">
+        {{ $pubdate := .PublishDate.Format "2006 年 1 月 2 日" }}
+        {{ $lastdate := .Lastmod.Format "2006 年 1 月 2 日" }}
+        {{ print $pubdate }}
+        {{ if ne $lastdate $pubdate }}
+          ，更新于 {{ print $lastdate }}
+        {{ end }}
+      </div>
     </header>
     {{ if .Params.toc.enable | default .Site.Params.toc.enable }}
       <h1> 目录 </h1>
